@@ -1,0 +1,26 @@
+# Use IBM Semeru Runtime (OpenJ9) - official builds
+# Using a stable tagged version instead of latest
+FROM ibm-semeru-runtimes:open-21-jdk-jammy
+
+# Install procps for process management and other utilities
+RUN apt-get update && apt-get install -y \
+    procps \
+    iproute2 \
+    net-tools \
+    iputils-ping \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create working directory
+WORKDIR /app
+
+# Copy test application
+COPY TestApp.java /app/
+
+# Compile Java application
+RUN javac TestApp.java
+
+# Enable JVM attach mechanism for OpenJ9
+ENV OPENJ9_JAVA_OPTIONS="-Dcom.ibm.tools.attach.enable=yes -Dcom.ibm.tools.attach.timeout=30000 -Dcom.ibm.tools.attach.logging=yes"
+
+# Keep container running
+CMD ["java", "-Dcom.ibm.tools.attach.enable=yes", "-Dcom.ibm.tools.attach.timeout=30000", "TestApp"]

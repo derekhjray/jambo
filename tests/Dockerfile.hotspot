@@ -1,0 +1,16 @@
+FROM openjdk:latest
+
+# Install necessary tools (Oracle Linux uses microdnf)
+RUN microdnf install -y procps-ng && microdnf clean all
+
+# Create working directory
+WORKDIR /app
+
+# Copy test application
+COPY TestApp.java /app/
+
+# Compile Java application
+RUN javac TestApp.java
+
+# Keep container running
+CMD ["java", "TestApp"]
