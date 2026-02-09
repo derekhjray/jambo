@@ -1,5 +1,11 @@
 # jambo
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/cosmorse/jambo.svg)](https://pkg.go.dev/github.com/cosmorse/jambo)
+[![Go Report Card](https://goreportcard.com/badge/github.com/cosmorse/jambo)](https://goreportcard.com/report/github.com/cosmorse/jambo)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![GitHub release](https://img.shields.io/github/release/cosmorse/jambo.svg)](https://github.com/cosmorse/jambo/releases)
+[![GitHub issues](https://img.shields.io/github/issues/cosmorse/jambo.svg)](https://github.com/cosmorse/jambo/issues)
+
 ### JVM Dynamic Attach Utility (Go version)
 
 A Go implementation of JVM dynamic attach mechanism, inspired by [jattach](https://github.com/jattach/jattach).
