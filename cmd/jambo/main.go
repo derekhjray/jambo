@@ -10,7 +10,8 @@ import (
 	"github.com/cosmorse/jambo"
 )
 
-const version = "1.0.0"
+// version will be set by ldflags during build
+var version = "dev"
 
 // printUsage prints the help message with command descriptions and examples.
 func printUsage() {

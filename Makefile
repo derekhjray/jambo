@@ -1,12 +1,22 @@
-JAMBO_VERSION=1.0.0
+# Get version from git tag, fallback to git describe, or use "dev" if no tags
+VERSION ?= $(shell git describe --tags --exact-match 2>/dev/null || git describe --tags --always 2>/dev/null || echo "dev")
 
-.PHONY: all build test clean install
+# Build flags to inject version
+LDFLAGS := -ldflags "-X main.version=$(VERSION)"
+
+# Release build flags (strip debug info and symbol table)
+RELEASE_LDFLAGS := -ldflags "-X main.version=$(VERSION) -w -s"
+
+.PHONY: all build test clean install version
 
 all: build
 
+version:
+	@echo "Version: $(VERSION)"
+
 build:
-	@echo "Building jambo..."
-	go build -o jambo ./cmd/jambo
+	@echo "Building jambo $(VERSION)..."
+	go build $(LDFLAGS) -o jambo ./cmd/jambo
 
 test:
 	@echo "Running tests..."
@@ -18,15 +28,18 @@ clean:
 	rm -rf dist
 
 install:
-	@echo "Installing..."
-	go install ./cmd/jambo
+	@echo "Installing jambo $(VERSION)..."
+	go install $(LDFLAGS) ./cmd/jambo
 
 release: clean test build
-	@echo "Creating release..."
+	@echo "Creating release $(VERSION)..."
 	mkdir -p dist
-	GOOS=linux GOARCH=amd64 go build -o dist/jambo-linux-amd64 ./cmd/jambo
-	GOOS=darwin GOARCH=amd64 go build -o dist/jambo-darwin-amd64 ./cmd/jambo
-	GOOS=darwin GOARCH=arm64 go build -o dist/jambo-darwin-arm64 ./cmd/jambo
+	GOOS=linux GOARCH=amd64 go build $(RELEASE_LDFLAGS) -o dist/jambo-linux-amd64 ./cmd/jambo
+	GOOS=darwin GOARCH=amd64 go build $(RELEASE_LDFLAGS) -o dist/jambo-darwin-amd64 ./cmd/jambo
+	GOOS=darwin GOARCH=arm64 go build $(RELEASE_LDFLAGS) -o dist/jambo-darwin-arm64 ./cmd/jambo
+	@echo "Release binaries created in dist/"
+	@echo "Binary sizes:"
+	@ls -lh dist/ | tail -n +2
 
 example:
 	@echo "Building example..."
@@ -34,6 +47,7 @@ example:
 
 help:
 	@echo "Available targets:"
+	@echo "  version   - Show current version from git tag"
 	@echo "  build     - Build the jambo binary"
 	@echo "  test      - Run tests"
 	@echo "  clean     - Clean build artifacts"
