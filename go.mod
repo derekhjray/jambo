@@ -1,4 +1,4 @@
-module github.com/cosmorse/jambo
+module github.com/anzekalabs/jambo
 
 go 1.25.6
 
