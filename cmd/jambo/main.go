@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/anzekalabs/jambo"
+	"github.com/auzekalabs/jambo"
 )
 
 // version will be set by ldflags during build

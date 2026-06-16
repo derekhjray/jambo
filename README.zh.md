@@ -1,10 +1,10 @@
 # jambo
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/anzekalabs/jambo.svg)](https://pkg.go.dev/github.com/anzekalabs/jambo)
-[![Go Report Card](https://goreportcard.com/badge/github.com/anzekalabs/jambo)](https://goreportcard.com/report/github.com/anzekalabs/jambo)
+[![Go Reference](https://pkg.go.dev/badge/github.com/auzekalabs/jambo.svg)](https://pkg.go.dev/github.com/auzekalabs/jambo)
+[![Go Report Card](https://goreportcard.com/badge/github.com/auzekalabs/jambo)](https://goreportcard.com/report/github.com/auzekalabs/jambo)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![GitHub release](https://img.shields.io/github/release/anzekalabs/jambo.svg)](https://github.com/anzekalabs/jambo/releases)
-[![GitHub issues](https://img.shields.io/github/issues/anzekalabs/jambo.svg)](https://github.com/anzekalabs/jambo/issues)
+[![GitHub release](https://img.shields.io/github/release/auzekalabs/jambo.svg)](https://github.com/auzekalabs/jambo/releases)
+[![GitHub issues](https://img.shields.io/github/issues/auzekalabs/jambo.svg)](https://github.com/auzekalabs/jambo/issues)
 
 ### JVM 动态附加工具（Go 版本）
 
@@ -60,13 +60,13 @@ JVM 动态附加机制的 Go 语言实现，灵感来源于 [jattach](https://gi
 ### 作为库使用
 
 ```bash
-go get github.com/anzekalabs/jambo
+go get github.com/auzekalabs/jambo
 ```
 
 ### 从源码构建
 
 ```bash
-git clone https://github.com/anzekalabs/jambo
+git clone https://github.com/auzekalabs/jambo
 cd jambo
 go build ./cmd/jambo
 ```
@@ -121,7 +121,7 @@ package main
 
 import (
     "fmt"
-    "github.com/anzekalabs/jambo"
+    "github.com/auzekalabs/jambo"
 )
 
 func main() {
@@ -339,4 +339,4 @@ Apache License 2.0
 - [Eclipse OpenJ9](https://github.com/eclipse-openj9/openj9) - OpenJ9 JVM 源代码
 
 ### API 文档
-- [Go 包文档](https://pkg.go.dev/github.com/anzekalabs/jambo) - 完整的 Go API 参考（godoc）
+- [Go 包文档](https://pkg.go.dev/github.com/auzekalabs/jambo) - 完整的 Go API 参考（godoc）

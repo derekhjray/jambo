@@ -1,10 +1,10 @@
 # jambo
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/anzekalabs/jambo.svg)](https://pkg.go.dev/github.com/anzekalabs/jambo)
-[![Go Report Card](https://goreportcard.com/badge/github.com/anzekalabs/jambo)](https://goreportcard.com/report/github.com/anzekalabs/jambo)
+[![Go Reference](https://pkg.go.dev/badge/github.com/auzekalabs/jambo.svg)](https://pkg.go.dev/github.com/auzekalabs/jambo)
+[![Go Report Card](https://goreportcard.com/badge/github.com/auzekalabs/jambo)](https://goreportcard.com/report/github.com/auzekalabs/jambo)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![GitHub release](https://img.shields.io/github/release/anzekalabs/jambo.svg)](https://github.com/anzekalabs/jambo/releases)
-[![GitHub issues](https://img.shields.io/github/issues/anzekalabs/jambo.svg)](https://github.com/anzekalabs/jambo/issues)
+[![GitHub release](https://img.shields.io/github/release/auzekalabs/jambo.svg)](https://github.com/auzekalabs/jambo/releases)
+[![GitHub issues](https://img.shields.io/github/issues/auzekalabs/jambo.svg)](https://github.com/auzekalabs/jambo/issues)
 
 ### JVM Dynamic Attach Utility (Go version)
 
@@ -60,13 +60,13 @@ A Go implementation of JVM dynamic attach mechanism, inspired by [jattach](https
 ### As a library
 
 ```bash
-go get github.com/anzekalabs/jambo
+go get github.com/auzekalabs/jambo
 ```
 
 ### Build from source
 
 ```bash
-git clone https://github.com/anzekalabs/jambo
+git clone https://github.com/auzekalabs/jambo
 cd jambo
 go build ./cmd/jambo
 ```
@@ -121,7 +121,7 @@ package main
 
 import (
     "fmt"
-    "github.com/anzekalabs/jambo"
+    "github.com/auzekalabs/jambo"
 )
 
 func main() {
@@ -339,4 +339,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - [Eclipse OpenJ9](https://github.com/eclipse-openj9/openj9) - OpenJ9 JVM source code
 
 ### API Documentation
-- [Go Package Documentation](https://pkg.go.dev/github.com/anzekalabs/jambo) - Full Go API reference (godoc)
+- [Go Package Documentation](https://pkg.go.dev/github.com/auzekalabs/jambo) - Full Go API reference (godoc)

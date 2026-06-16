@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/anzekalabs/jambo"
+	"github.com/auzekalabs/jambo"
 )
 
 // Example_simpleAttach demonstrates the simplest way to attach to a JVM process.

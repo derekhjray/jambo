@@ -1,4 +1,4 @@
-module github.com/anzekalabs/jambo
+module github.com/auzekalabs/jambo
 
 go 1.25.6
 
